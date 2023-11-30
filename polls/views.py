@@ -22,7 +22,7 @@ def vote(request, question_id):
     for i in range(question.choice_set.count()):
         try:
             selected_choice = question.choice_set.all()[i]
-            selected_choice.votes = request.POST['choice'+str(i+1)]
+            selected_choice.votes = request.POST[f'choice{str(i + 1)}']
         except (KeyError, Choice.DoesNotExist):
             return render(request, 'polls/detail.html', {
                 'question': question,

@@ -9,7 +9,7 @@ class Album(models.Model):
 
 
     def __str__(self):
-        return self.artist + '--' + self.genre + '--' + self.year_of_release + '--' + self.image
+        return f'{self.artist}--{self.genre}--{self.year_of_release}--{self.image}'
 
 
 class Song(models.Model):
